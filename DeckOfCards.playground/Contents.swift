@@ -217,5 +217,14 @@ class DeckOfCardsTests: XCTestCase {
         }
         XCTAssertNil(deck.dealOneCard())
     }
+    
+    func testCardEquality() {
+        let card1 = Card(suit: .club, faceValue: .ace)
+        let card2 = Card(suit: .club, faceValue: .ace)
+        let card3 = Card(suit: .diamond, faceValue: .king)
+        
+        XCTAssertEqual(card1 == card2, true)
+        XCTAssertEqual(card1 == card3, false)
+    }
 }
 
